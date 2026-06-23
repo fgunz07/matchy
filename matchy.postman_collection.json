@@ -1,0 +1,550 @@
+{
+  "info": {
+    "_postman_id": "b30b14d9-05c9-4cf0-a054-9bf42e7cfde4",
+    "name": "matchy",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "784687"
+  },
+  "item": [
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "social",
+          "item": [
+            {
+              "name": "google",
+              "item": [
+                {
+                  "name": "auth",
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{host}}/auth/social/google",
+                      "host": [
+                        "{{host}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "social",
+                        "google"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "callback",
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{host}}/auth/social/google/callback?token=CODE_FROM_GOOGLE",
+                      "host": [
+                        "{{host}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "social",
+                        "google",
+                        "callback"
+                      ],
+                      "query": [
+                        {
+                          "key": "token",
+                          "value": "CODE_FROM_GOOGLE"
+                        }
+                      ]
+                    }
+                  },
+                  "response": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "logout",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{host}}/auth/logout",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "auth",
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"example@example.com\",\n    \"password\": \"password.\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{host}}/auth/login",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Example\",\n    \"email\": \"example@example.com\",\n    \"birthday\": \"05-05-2026\",\n    \"gender\": \"male\",\n    \"bio\": \"This is a example.\",\n    \"password\": \"password.\",\n    \"password_confirmation\": \"password.\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{host}}/auth/register",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "forget password",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"example@example.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{host}}/auth/forget-password",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "auth",
+                "forget-password"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "reset password",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"example@example.com\",\n    \"token\": \"7fe59e74ed0fdec62198617764f74df8861ee8d3c12e12c50d792d57c999333d\",\n    \"password\": \"password.\",\n    \"password_confirmation\": \"password.\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{host}}/auth/reset-password",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "auth",
+                "reset-password"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "me",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/me",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "me"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "user",
+      "item": [
+        {
+          "name": "conversation",
+          "item": [
+            {
+              "name": "index",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"receiver_id\": 3\n}"
+                },
+                "url": {
+                  "raw": "{{host}}/users/111/conversations?include=receiver,lastMessage",
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "users",
+                    "111",
+                    "conversations"
+                  ],
+                  "query": [
+                    {
+                      "key": "include",
+                      "value": "receiver,lastMessage"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "like",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"example@example.com\",\n    \"password\": \"password.\"\n}"
+            },
+            "url": {
+              "raw": "{{host}}/users/2/like",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "users",
+                "2",
+                "like"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "unlike",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"example@example.com\",\n    \"password\": \"password.\"\n}"
+            },
+            "url": {
+              "raw": "{{host}}/users/2/unlike",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "users",
+                "2",
+                "unlike"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "index",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/users?include=likers",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "users"
+              ],
+              "query": [
+                {
+                  "key": "include",
+                  "value": "likers",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Example\",\n    \"email\": \"example@example.com\",\n    \"birthday\": \"05-05-2026\",\n    \"gender\": \"male\",\n    \"bio\": \"This is a example.\",\n    \"password\": \"password.\",\n    \"password_confirmation\": \"password.\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{host}}/users/2",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "users",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "show",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/users/1",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "users",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "conversation",
+      "item": [
+        {
+          "name": "message",
+          "item": [
+            {
+              "name": "store",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"content\": \"Hi\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{host}}/conversations/1/messages",
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "conversations",
+                    "1",
+                    "messages"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "index",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{host}}/conversations/111/messages",
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "conversations",
+                    "111",
+                    "messages"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "store",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"receiver_id\": 3\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{host}}/conversations",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "conversations"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "show",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"receiver_id\": 3\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{host}}/conversations/1",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "conversations",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "destroy",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"receiver_id\": 3\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{host}}/conversations/1",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "conversations",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}

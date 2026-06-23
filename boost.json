@@ -1,0 +1,19 @@
+{
+    "agents": [
+        "copilot",
+        "claude_code",
+        "cursor",
+        "codex",
+        "antigravity"
+    ],
+    "cloud": true,
+    "guidelines": true,
+    "mcp": true,
+    "nightwatch": false,
+    "sail": true,
+    "skills": [
+        "laravel-best-practices",
+        "socialite-development",
+        "deploying-laravel-cloud"
+    ]
+}

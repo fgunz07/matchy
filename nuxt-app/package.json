@@ -1,0 +1,26 @@
+{
+  "name": "nuxt-app",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@dicebear/core": "^10.3.0",
+    "@dicebear/styles": "^10.2.0",
+    "@tailwindcss/vite": "^4.3.1",
+    "daisyui": "^5.5.23",
+    "laravel-precognition-vue": "^2.0.0",
+    "nuxt": "^4.4.8",
+    "tailwindcss": "^4.3.1",
+    "vue": "^3.5.38",
+    "vue-router": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.0"
+  }
+}
