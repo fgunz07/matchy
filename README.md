@@ -1,5 +1,5 @@
 ## About
-This is a proof of concept for a dating style website I called ```matchy```. A light weight web platform where users can send like to other users an send direct message.
+This is a proof of concept for a dating style website I called ```matchy```. A light weight web platform where users can send like to other users and send direct message.
 
 ## Tech stacks
 - **Laravel**
